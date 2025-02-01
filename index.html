@@ -69,7 +69,10 @@
     </table>
     <hr>
     <h2>Creating your own data stream in Python</h2>
-    <p></p>
+    <p>The processor function and Processor class read data, use a converter to transform it,
+         and then write the processed data as part of the data processing pipeline defined by 
+         this Python code. In order to perform actual data transformation, the converter technique
+          must be used as a stand-in.</p>
 
     <pre>
         def processor(reader, converter, writer):
