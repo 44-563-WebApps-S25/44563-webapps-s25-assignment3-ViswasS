@@ -40,9 +40,9 @@
     <p>I particularly think these four actors could have played
         as the main character in Oppenheimer. Each of them have unique talents
         and styles that could have given the film a different feel.</p>
-    <table>
+    <table border="2">
         <tr>
-            <th>Actor Nmae</th>
+            <th>Actor Name</th>
             <th>Opinions of choice</th>
             <th>Age</th>
         </tr>
@@ -67,6 +67,36 @@
             <td>31</td>
         </tr>
     </table>
-    
+    <hr>
+    <h2>Creating your own data stream in Python</h2>
+    <p></p>
+
+    <pre>
+        def processor(reader, converter, writer):
+            while True:
+                data = reader.read()
+                if not data:
+                    break
+                data = converter(data)
+                writer.write(data)
+        
+        class Processor:
+            def __init__(self, reader, writer):
+                self.reader = reader
+                self.writer = writer
+        
+            def process(self):
+                while True:
+                    data = self.reader.readline()
+                    if not data:
+                        break
+                    data = self.converter(data)
+                    self.writer.write(data)
+        
+            def converter(data):
+                assert False, 'converter must be defined'
+    </pre>
+    <p>Link to my <a href="https://code.pieces.app/collections/python">Assignment Reference</a></p>
+
 </body>
 </html>
